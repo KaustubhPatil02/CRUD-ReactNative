@@ -15,22 +15,45 @@ const HomeScreen = () => {
         <View style={styles.homescr}>
             <Text style={styles.title}>Dashboard</Text>
             <View style={styles.btnContainer}>
-                <Pressable style={[styles.buttons, view === 0 > {backgroundColor:"yellow"}  ]}onPress={()=>setView(0)}>
-                    <Text style={styles.btnText}>All items</Text>
+                <Pressable 
+                    style={[
+                        styles.buttons, 
+                        view === 0 && styles.activeButton
+                    ]}
+                    onPress={() => setView(0)}
+                >
+                    <Text style={[styles.btnText, view === 0 && styles.activeText]}>
+                        All items
+                    </Text>
                 </Pressable>
-
-                <Pressable style={styles.buttons}onPress={()=>setView(1)}>
-                    <Text style={styles.btnText}>Check</Text>
+    
+                <Pressable 
+                    style={[
+                        styles.buttons, 
+                        view === 1 && styles.activeButton
+                    ]}
+                    onPress={() => setView(1)}
+                >
+                    <Text style={[styles.btnText, view === 1 && styles.activeText]}>
+                        Check
+                    </Text>
                 </Pressable>
-
-                <Pressable style={styles.buttons}onPress={()=>setView(2)}>
-                    <Text style={styles.btnText}>Create Items</Text>
+    
+                <Pressable 
+                    style={[
+                        styles.buttons, 
+                        view === 2 && styles.activeButton
+                    ]}
+                    onPress={() => setView(2)}
+                >
+                    <Text style={[styles.btnText, view === 2 && styles.activeText]}>
+                        Create Items
+                    </Text>
                 </Pressable>
-
+    
                 {view === 0 && <CheckItemsScreen/>} 
                 {view === 1 && <CheckItemsScreen/>} 
                 {view === 2 && <CreateItemsScreen/>}
-
             </View>
         </View>
     )
@@ -47,9 +70,9 @@ const styles = StyleSheet.create({
         padding: "4%",
     },
     title: {
-        fontSize: 26,
+        fontSize: 28,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#444',
         marginBottom: 10,
         // textAlign: 'center',
         // padding: 10,
@@ -72,8 +95,12 @@ const styles = StyleSheet.create({
 
     btnText: {
         color: "green",
-        fontSize: 12,
-
-
-    }
+        fontSize: 14,
+    },
+    activeButton: {
+        backgroundColor: 'green',
+    },
+    activeText: {
+        color: 'white',
+    },
 })
