@@ -1,22 +1,35 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import CheckItemsScreen from './CheckItemsScreen'
+import CreateItemsScreen from './CreateItemsScreen'
 
 const HomeScreen = () => {
+    const [view, setView] = useState(0)
+
+
+
+
+
+    
     return (
         <View style={styles.homescr}>
             <Text style={styles.title}>Dashboard</Text>
             <View style={styles.btnContainer}>
-                <Pressable style={styles.buttons}>
+                <Pressable style={[styles.buttons, view === 0 > {backgroundColor:"yellow"}  ]}onPress={()=>setView(0)}>
                     <Text style={styles.btnText}>All items</Text>
                 </Pressable>
 
-                <Pressable style={styles.buttons}>
-                    <Text style={styles.btnText}>Items 2</Text>
+                <Pressable style={styles.buttons}onPress={()=>setView(1)}>
+                    <Text style={styles.btnText}>Check</Text>
                 </Pressable>
 
-                <Pressable style={styles.buttons}>
-                    <Text style={styles.btnText}>Items #3</Text>
+                <Pressable style={styles.buttons}onPress={()=>setView(2)}>
+                    <Text style={styles.btnText}>Create Items</Text>
                 </Pressable>
+
+                {view === 0 && <CheckItemsScreen/>} 
+                {view === 1 && <CheckItemsScreen/>} 
+                {view === 2 && <CreateItemsScreen/>}
 
             </View>
         </View>
@@ -27,6 +40,7 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     homescr: {
+        flex: 1,
         width: '100%',
         height: '100%',
         backgroundColor: 'smokewhite',
