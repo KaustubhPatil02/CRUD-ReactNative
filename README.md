@@ -1,7 +1,7 @@
 ## Just applying all the basic knowledge of React Native to create this basic app.
 
 <p align="center">
-  <img src="/Progress-images/demo.gif" alt="App Demo" width="800" height="600"/>
+  <img src="/Progress-images/demo.gif" alt="App Demo" width="800" height="300"/>
 </p>
 
 ### First UI
