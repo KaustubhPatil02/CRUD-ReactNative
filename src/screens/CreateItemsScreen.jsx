@@ -3,12 +3,19 @@ import React from 'react'
 
 const CreateItemsScreen = () => {
   return (
-    <View>
-      <Text>CreateItemsScreen</Text>
+    <View style={styles.container}>
+      <Text>Create Items</Text>
     </View>
   )
 }
 
 export default CreateItemsScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        // height: '100%',
+        // width: '100%',
+    }
+})
