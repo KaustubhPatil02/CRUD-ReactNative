@@ -1,23 +1,22 @@
 ## Just applying all the basic knowledge of React Native to create this basic app.
 
-<div align="center">
-  <img 
-    src="./Progress-images/demo.gif" 
-    alt="React Native App Demo"
-    style="max-width: 100%; height: auto;"
-  />
-</div>
-
 ## Progress Screenshots
 
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <div>
-    <h3>First UI</h3>
-    <img src="./Progress-images/first-protype.png" alt="First UI" width="400"/>
-  </div>
-  <div>
-    <h3>Dynamic Data UI</h3>
-    <img src="./Progress-images/progress2.png" alt="Dynamic Data UI" width="400"/>
+<div style="margin-bottom: 40px;">
+  <div align="center">
+    <div>
+      <h2>Design</h2>
+      <img src="./Progress-images/Frame 2.svg" alt="First UI Screenshot"/>
+    </div>
   </div>
 </div>
 
+<div style="margin-top: 40px;">
+  <div align="center">
+    <img 
+      src="./Progress-images/demo.gif" 
+      alt="React Native App Demo"
+      style="max-width: 100%; height: auto;"
+    />
+  </div>
+</div>
