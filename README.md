@@ -1,10 +1,10 @@
 ## Just applying all the basic knowledge of React Native to create this basic app.
 
 <div align="center">
-  <video width="500" height="300" controls>
-    <source src="./Progress-images/demo.mp4" type="video/mp4">
+  <img width="500" height="300" controls>
+    <source src="./Progress-images/demo.gif" type="video/mp4">
     Your browser does not support the video tag.
-  </video>
+  </img>
 </div>
 
 ### First UI
