@@ -12,11 +12,12 @@ const AllItemsScreen = () => {
         data={groceryData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
+          <View style={[styles.itemContainer, {backgroundColor: item.quantity <= 20 ? "#FFCCCC" : "#D7F6BF"}]}>
             <Text styles={styles.itemText}>{item.name}</Text>
             <Text styles={styles.itemText}>{item.quantity}</Text>
           </View>
         )}
+        contentContainerStyle={{gap: 10}}
       />
     </View>
   )
@@ -41,6 +42,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
+    paddingVertical: 7,
+    borderRadius: 10,
   },
   itemText:{
     fontWeight:"400",
