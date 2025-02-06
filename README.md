@@ -1,4 +1,5 @@
 ## Just applying all the basic knowledge of React Native to create this basic app.
+![Demo](/Progress-images/demo.gif)
 ### First UI
 ![Firstscreen](/Progress-images/first-protype.png)
 ### Dynamic data fetched and basic ui

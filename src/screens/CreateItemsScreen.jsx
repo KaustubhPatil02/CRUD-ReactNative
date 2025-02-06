@@ -5,6 +5,7 @@ import AllItemsScreen from './AllItemsScreen'
 const CreateItemsScreen = ({groceryData}) => {
   const [item, setItem] = useState('')
   const [quantity, setQuantity] = useState("")
+  const [unit, setUnit] = useState("")
   return (
     <View style={styles.container}>
       <TextInput
@@ -17,7 +18,14 @@ const CreateItemsScreen = ({groceryData}) => {
         placeholder='Enter Quantity ...'
         style={styles.input}
         value={quantity}
+        keyboardType='numeric'
         onChangeText={(quantity) => setQuantity(quantity)}
+      />
+      <TextInput
+        placeholder='Enter units i.e.kg or ltrs'
+        style={styles.input}
+        value={unit}
+        onChangeText={(unit) => setUnit(unit)}
       />
       <Pressable style={styles.btn}>
         <Text style={styles.btnText}>Add Item in stock</Text>

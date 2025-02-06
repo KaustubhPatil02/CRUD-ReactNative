@@ -1,9 +1,9 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import groceryData from '../utils/data'
 
-const AllItemsScreen = () => {
+const AllItemsScreen = ({groceryData}) => {
   return (
     <View>
+   
       <View style={styles.headingContainer}>
         <Text style={[styles.headingTxt, styles.column]}>Items</Text>
         <Text style={[styles.headingTxt, styles.column]}>Quantity</Text>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   itemText:{
-    fontWeight:"500",
+    fontWeight:"400",
     fontSize: 15,
     textAlign: 'center',
   },

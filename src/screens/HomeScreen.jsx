@@ -6,6 +6,12 @@ import groceryData from '../utils/data'
 
 const HomeScreen = () => {
     const [view, setView] = useState(0)
+    const getFilteredData = () => {
+        const filteredItems = groceryData.filter(item => item.quantity <= 20);
+        // console.log("Filtered Items: ", filteredItems); // checking if the filter is working or not
+        return filteredItems;
+    };
+       
 
     // const groceryData = [
     //     {
@@ -74,7 +80,7 @@ const HomeScreen = () => {
                     </Text>
                 </Pressable>
     
-                {/* <Pressable 
+                <Pressable 
                     style={[
                         styles.buttons, 
                         view === 1 && styles.activeButton
@@ -84,7 +90,7 @@ const HomeScreen = () => {
                     <Text style={[styles.btnText, view === 1 && styles.activeText]}>
                         Low Stock Items
                     </Text>
-                </Pressable> */}
+                </Pressable>
     
                 <Pressable 
                     style={[
@@ -99,10 +105,9 @@ const HomeScreen = () => {
                 </Pressable>
     
             </View>
-                {view === 0 && <AllItemsScreen data={groceryData}/>} 
-                {/* {view === 1 && <AllItemsScreen data={groceryData.filter((item)=> item.quantity <= 20)}/>}  */}
-                {view === 1 && <AllItemsScreen data={groceryData.filter((quantity)=> quantity < 20)}/>}
-                {view === 2 && <CreateItemsScreen data={groceryData}/>}
+                {view === 0 && <AllItemsScreen groceryData={groceryData} />} 
+                {view === 1 && <AllItemsScreen groceryData={getFilteredData()}/>}
+                {view === 2 && <CreateItemsScreen groceryData={groceryData}/>}
         </View>
     )
 }
