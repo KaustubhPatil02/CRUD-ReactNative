@@ -1,8 +1,12 @@
 ## Just applying all the basic knowledge of React Native to create this basic app.
 
-<p align="center">
-  <video src="/Progress-images/demo.gif" alt="App Demo" width="800" height="300"/>
-</p>
+<div align="center">
+  <img 
+    src="./Progress-images/demo.gif" 
+    alt="React Native App Demo"
+    style="max-width: 100%; height: auto;"
+  />
+</div>
 
 ### First UI
 ![Firstscreen](/Progress-images/first-protype.png)
