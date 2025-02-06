@@ -5,16 +5,18 @@ const AllItemsScreen = () => {
   return (
     <View>
       <View style={styles.headingContainer}>
-        <Text style={styles.headingTxt}> Items</Text>
-        <Text style={styles.headingTxt}>Quantity</Text>
+        <Text style={[styles.headingTxt, styles.column]}>Items</Text>
+        <Text style={[styles.headingTxt, styles.column]}>Quantity</Text>
+        <Text style={[styles.headingTxt, styles.column]}>Units</Text>
       </View>
       <FlatList
         data={groceryData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={[styles.itemContainer, {backgroundColor: item.quantity <= 20 ? "#FFCCCC" : "#D7F6BF"}]}>
-            <Text styles={styles.itemText}>{item.name}</Text>
-            <Text styles={styles.itemText}>{item.quantity}</Text>
+            <Text style={[styles.itemText, styles.column]}>{item.name}</Text>
+            <Text style={[styles.itemText, styles.column]}>{item.quantity}</Text>
+            <Text style={[styles.itemText, styles.column]}>{item.unit}</Text>
           </View>
         )}
         contentContainerStyle={{gap: 10}}
@@ -23,13 +25,10 @@ const AllItemsScreen = () => {
   )
 }
 
-export default AllItemsScreen
-
 const styles = StyleSheet.create({
   headingContainer: {
     flexDirection: "row",
     alignItems: 'center',
-    justifyContent: 'center',
     justifyContent: "space-between",
     paddingHorizontal: 15,
     paddingVertical: 10,
@@ -37,6 +36,7 @@ const styles = StyleSheet.create({
   headingTxt:{
     fontWeight:"700",
     fontSize: 16,
+    textAlign: 'center',
   },
   itemContainer:{
     flexDirection: "row",
@@ -46,8 +46,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   itemText:{
-    fontWeight:"400",
-    fontSize: 18,
+    fontWeight:"500",
+    fontSize: 15,
+    textAlign: 'center',
   },
-  
+  column: {
+    width: '33%',
+  }
 })
+
+export default AllItemsScreen

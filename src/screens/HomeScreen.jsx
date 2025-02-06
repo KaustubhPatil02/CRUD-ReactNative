@@ -6,6 +6,57 @@ import groceryData from '../utils/data'
 
 const HomeScreen = () => {
     const [view, setView] = useState(0)
+
+    // const groceryData = [
+    //     {
+    //       id: 1,
+    //       name: "Rice",
+    //       quantity: 10,
+    //       unit: "kg"
+    //     },
+    //     {
+    //       id: 2,
+    //       name: "Sugar",
+    //       quantity: 50,
+    //       unit: "kg"
+    //     },
+    //     {
+    //       id: 3,
+    //       name: "Milk",
+    //       quantity: 240,
+    //       unit: "litr"
+    //     },
+    //     {
+    //       id: 4,
+    //       name: "Flour",
+    //       quantity: 70,
+    //       unit: "kg"
+    //     },
+    //     {
+    //       id: 5,
+    //       name: "Salt",
+    //       quantity: 50,
+    //       unit: "kg"
+    //     },
+    //     {
+    //       id: 6,
+    //       name: "Cooking Oil",
+    //       quantity: 2,
+    //       unit: "litr"
+    //     },
+    //     {
+    //       id: 7,
+    //       name: "Lentils",
+    //       quantity: 10,
+    //       unit: "kg"
+    //     },
+    //     {
+    //       id: 8,
+    //       name: "Coffee Powder",
+    //       quantity: 100,
+    //       unit: "kg"
+    //     }
+    //   ];
     
     return (
         <View style={styles.homescr}>
@@ -23,7 +74,7 @@ const HomeScreen = () => {
                     </Text>
                 </Pressable>
     
-                <Pressable 
+                {/* <Pressable 
                     style={[
                         styles.buttons, 
                         view === 1 && styles.activeButton
@@ -33,7 +84,7 @@ const HomeScreen = () => {
                     <Text style={[styles.btnText, view === 1 && styles.activeText]}>
                         Low Stock Items
                     </Text>
-                </Pressable>
+                </Pressable> */}
     
                 <Pressable 
                     style={[
@@ -49,8 +100,9 @@ const HomeScreen = () => {
     
             </View>
                 {view === 0 && <AllItemsScreen data={groceryData}/>} 
-                {view === 1 && <AllItemsScreen/>} 
-                {view === 2 && <CreateItemsScreen/>}
+                {/* {view === 1 && <AllItemsScreen data={groceryData.filter((item)=> item.quantity <= 20)}/>}  */}
+                {view === 1 && <AllItemsScreen data={groceryData.filter((quantity)=> quantity < 20)}/>}
+                {view === 2 && <CreateItemsScreen data={groceryData}/>}
         </View>
     )
 }
@@ -91,7 +143,7 @@ const styles = StyleSheet.create({
     btnText: {
         color: "green",
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 16,
     },
     activeButton: {
         backgroundColor: 'green',
