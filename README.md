@@ -4,7 +4,7 @@
   <img 
     src="./Progress-images/demo.gif" 
     alt="React Native App Demo"
-    style="max-width: 100%; height: auto;"
+    style="max-width: 200%; height: 300;"
   />
 </div>
 
