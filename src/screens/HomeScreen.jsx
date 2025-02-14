@@ -11,59 +11,58 @@ const HomeScreen = () => {
         // console.log("Filtered Items: ", filteredItems); // checking if the filter is working or not
         return filteredItems;
     };
-       
 
-    // const groceryData = [
-    //     {
-    //       id: 1,
-    //       name: "Rice",
-    //       quantity: 10,
-    //       unit: "kg"
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "Sugar",
-    //       quantity: 50,
-    //       unit: "kg"
-    //     },
-    //     {
-    //       id: 3,
-    //       name: "Milk",
-    //       quantity: 240,
-    //       unit: "litr"
-    //     },
-    //     {
-    //       id: 4,
-    //       name: "Flour",
-    //       quantity: 70,
-    //       unit: "kg"
-    //     },
-    //     {
-    //       id: 5,
-    //       name: "Salt",
-    //       quantity: 50,
-    //       unit: "kg"
-    //     },
-    //     {
-    //       id: 6,
-    //       name: "Cooking Oil",
-    //       quantity: 2,
-    //       unit: "litr"
-    //     },
-    //     {
-    //       id: 7,
-    //       name: "Lentils",
-    //       quantity: 10,
-    //       unit: "kg"
-    //     },
-    //     {
-    //       id: 8,
-    //       name: "Coffee Powder",
-    //       quantity: 100,
-    //       unit: "kg"
-    //     }
-    //   ];
-    
+    const [groceryData, setgroceryData] = useState(    [
+        {
+          id: 1,
+          name: "Rice",
+          quantity: 10,
+          unit: "kg"
+        },
+        {
+          id: 2,
+          name: "Sugar",
+          quantity: 50,
+          unit: "kg"
+        },
+        // {
+        //   id: 3,
+        //   name: "Milk",
+        //   quantity: 240,
+        //   unit: "litr"
+        // },
+        // {
+        //   id: 4,
+        //   name: "Flour",
+        //   quantity: 70,
+        //   unit: "kg"
+        // },
+        // {
+        //   id: 5,
+        //   name: "Salt",
+        //   quantity: 50,
+        //   unit: "kg"
+        // },
+        {
+          id: 6,
+          name: "Cooking Oil",
+          quantity: 2,
+          unit: "litr"
+        },
+        {
+          id: 7,
+          name: "Lentils",
+          quantity: 10,
+          unit: "kg"
+        },
+        {
+          id: 8,
+          name: "Coffee Powder",
+          quantity: 100,
+          unit: "kg"
+        }
+      ])
+           
     return (
         <View style={styles.homescr}>
             <Text style={styles.title}>Dashboard</Text>
@@ -107,7 +106,7 @@ const HomeScreen = () => {
             </View>
                 {view === 0 && <AllItemsScreen groceryData={groceryData} />} 
                 {view === 1 && <AllItemsScreen groceryData={getFilteredData()}/>}
-                {view === 2 && <CreateItemsScreen groceryData={groceryData}/>}
+                {view === 2 && <CreateItemsScreen groceryData={groceryData} setgroceryData={setgroceryData}/>}
         </View>
     )
 }
