@@ -1,4 +1,4 @@
-## Just applying all the basic knowledge of React Native to create this basic app.
+## Just applying all the basic knowledge of React Native to create a basic CRUD app.
 
 ## Progress Screenshots
 
